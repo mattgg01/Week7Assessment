@@ -23,7 +23,10 @@ append 3.076 ms
 
 Summary of Results
 
-I'm noticing gradually as we increase the size of the array, the slower the functions become. They become much slower at large array extra large array. 
-Insert overall preformed better than append. Insert scales better. This is probably because with append, using the push() method, the code under the-
-hood is having to go all the way to the end of the array to insert the new numbers, and then returns the new array length. 
-With insert, the code inserts the numbers at the beginning of the array, allowing the computer to save time.
+The append function runs slower than the insert function when dealing with small arrays. As the arrays get larger, append runs faster than the insert function.
+Append scales at 0(N), and the insert function scales with runtime complexity of 0(n^2). Append scales better.
+
+The insert function is so slow because in order to place the new value at the beginning of the array, it has to assign new memory places for all of the other values that came before.
+This is trivial when the array size is small, but when we start getting past thousands, allocating this much memory becomes very 
+taxing on the system. It becomes slower because it has to do so much more memory allocation than the push method we used in the append function
+
